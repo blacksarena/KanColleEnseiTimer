@@ -39,15 +39,12 @@ int CountDownTimer::getLeftTime()
     if(_counting){
         return QDateTime::currentDateTime().secsTo(_end_time);
     }else{
-        return _hour * 3600 + _min * 60;
+        return _hour * 3600 + _min * 60 + _sec;
     }
 }
 
 QDateTime CountDownTimer::setOffsetTime(int hour, int min, int sec)
 {
     _end_time = QDateTime::currentDateTime().addSecs(-((_hour-hour)*3600 + (_min-min)*60 +(_sec-sec)));
-    qDebug() << _end_time;
-    qDebug() << _hour << _min << _sec;
-    qDebug() << -((_hour-hour)*3600 + (_min-min)*60 +(_sec-sec));
     return _end_time;
 }

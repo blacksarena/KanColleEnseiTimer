@@ -18,19 +18,19 @@ public:
     Rect(int x, int y, int width, int height):_x(x), _y(y), _width(width), _height(height){;}
     virtual ~Rect(){;}
 
-    int x()      const {return _x;}
-    int y()      const {return _y;}
-    int width()  const {return _width;}
-    int height() const {return _height;}
-    int left()   const {return _x;}
-    int top()    const {return _y;}
-    int right()  const {return _x+_width;}
-    int bottom() const {return _y+_height;}
+    inline int x()      const {return _x;}
+    inline int y()      const {return _y;}
+    inline int width()  const {return _width;}
+    inline int height() const {return _height;}
+    inline int left()   const {return _x;}
+    inline int top()    const {return _y;}
+    inline int right()  const {return _x+_width;}
+    inline int bottom() const {return _y+_height;}
 
-    void setX(int x){_x = x;}
-    void setY(int y){_y = y;}
-    void setWidth (int width) {_width  = width;}
-    void setHeight(int height){_height = height;}
+    inline void setX(int x){_x = x;}
+    inline void setY(int y){_y = y;}
+    inline void setWidth (int width) {_width  = width;}
+    inline void setHeight(int height){_height = height;}
 
 private:
     int _x;
@@ -45,10 +45,10 @@ public:
     ScreenShot();
 
     // setter
-    void setFormat(ImageFormat image_format){_image_format = image_format;}
-    void setSaveDirectory(QString save_directory){_save_directory = save_directory;}
+    inline void setFormat(ImageFormat image_format){_image_format = image_format;}
+    inline void setSaveDirectory(QString save_directory){_save_directory = save_directory;}
     // getter
-    QString getTakeScreenShotErrorString()const{return _take_screen_shot_error_string;}
+    inline const QString& getTakeScreenShotErrorString()const{return _take_screen_shot_error_string;}
 
     bool serchGameWindow();
     bool takeScreenShot();

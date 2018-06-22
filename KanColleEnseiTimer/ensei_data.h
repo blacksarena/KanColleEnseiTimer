@@ -13,8 +13,7 @@ public:
     EnseiData(const QString &path);
     virtual ~EnseiData();
 
-    QString test();
-    QStringList getEnseiList();
+    inline const QStringList getEnseiList()const{return _enseiname_list;}
     int getHour(const QString &ensei_name);
     int getMin(const QString &ensei_name);
     int getFuel(const QString &ensei_name);

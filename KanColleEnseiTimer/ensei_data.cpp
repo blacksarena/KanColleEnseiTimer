@@ -19,16 +19,6 @@ EnseiData::~EnseiData()
 
 }
 
-QString EnseiData::test()
-{
-    return _object["遠征"].toArray().at(0).toObject()["鎮守府海域"].toArray().at(0).toObject()["練習航海"].toObject()["遠征名"].toString();
-}
-
-QStringList EnseiData::getEnseiList()
-{
-    return _enseiname_list;
-}
-
 void EnseiData::parseEnseiList(const QJsonArray &array)
 {
     for(int area = 0; area < array.count(); ++area){// 遠征海域

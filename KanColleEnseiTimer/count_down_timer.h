@@ -13,14 +13,14 @@ public:
     QString start(QDateTime start_time = QDateTime::currentDateTime());
     void stop();
     int getLeftTime();// return sec
-    inline bool isCountDown(){return _counting;}
+    inline bool isCountDown()const{return _counting;}
     inline QDateTime startTime(){return _end_time.addSecs(-(_hour*3600+_min*60));}
-    inline QString year()  {return _end_time.addSecs(-(_hour*3600+_min*60)).toString("yyyy");}
-    inline QString month() {return _end_time.addSecs(-(_hour*3600+_min*60)).toString("MM");}
-    inline QString day()   {return _end_time.addSecs(-(_hour*3600+_min*60)).toString("dd");}
-    inline QString hour()  {return _end_time.addSecs(-(_hour*3600+_min*60)).toString("hh");}
-    inline QString minute(){return _end_time.addSecs(-(_hour*3600+_min*60)).toString("mm");}
-    inline QString second(){return _end_time.addSecs(-(_hour*3600+_min*60)).toString("ss");}
+    inline const QString year()  {return _end_time.addSecs(-(_hour*3600+_min*60)).toString("yyyy");}
+    inline const QString month() {return _end_time.addSecs(-(_hour*3600+_min*60)).toString("MM");}
+    inline const QString day()   {return _end_time.addSecs(-(_hour*3600+_min*60)).toString("dd");}
+    inline const QString hour()  {return _end_time.addSecs(-(_hour*3600+_min*60)).toString("hh");}
+    inline const QString minute(){return _end_time.addSecs(-(_hour*3600+_min*60)).toString("mm");}
+    inline const QString second(){return _end_time.addSecs(-(_hour*3600+_min*60)).toString("ss");}
     QDateTime setOffsetTime(int hour, int min, int sec);
 
 private:

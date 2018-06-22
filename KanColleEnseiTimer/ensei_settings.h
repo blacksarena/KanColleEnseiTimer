@@ -13,18 +13,19 @@ public:
     void loadSettings();
     void saveSettings();
 
-    inline QString   enseiDataPath(){return _ensei_data_path;}
-    inline void      getEnseiDataPath(QString path){_ensei_data_path = path;}
-    inline QPoint    windowPos(){return _window_pos;}
-    inline void      setWindowPos(QPoint pos){_window_pos = pos;}
-    inline bool      windowFrontmost(){return _window_frontmost;}
-    inline void      setWindowFrontmost(bool frontmost){_window_frontmost = frontmost;}
-    inline QString   destination(int fleet_number){return _destination[fleet_number];}
-    inline void      setDestination(int fleet_number, const QString &destination){_destination[fleet_number] = destination;}
-    inline QDateTime enseiStartDate(int fleet_number){return _ensei_start_date[fleet_number];}
-    inline void      setEnseiStartDate(int fleet_number, const QDateTime &ensei_start_date){_ensei_start_date[fleet_number] = ensei_start_date;}
-    inline bool      enseiCounting(int fleet_number){return _ensei_counting[fleet_number];}
-    inline void      setEnseiCounting(int fleet_number, bool ensei_counting){_ensei_counting[fleet_number] = ensei_counting;}
+    inline const QString&   enseiDataPath()                                             const{return _ensei_data_path;}
+    inline       void       setEnseiDataPath(QString path)                                   {_ensei_data_path = path;}
+    inline const QPoint&    windowPos()                                                 const{return _window_pos;}
+    inline       void       setWindowPos(QPoint pos)                                         {_window_pos = pos;}
+    inline       bool       windowFrontmost()                                           const{return _window_frontmost;}
+    inline       void       setWindowFrontmost(bool frontmost)                               {_window_frontmost = frontmost;}
+    inline const QString&   destination(int fleet_number)                               const{return _destination[fleet_number];}
+    inline       void       setDestination(int fleet_number, const QString &destination)     {_destination[fleet_number] = destination;}
+    inline const QDateTime& enseiStartDate(int fleet_number)                            const{return _ensei_start_date[fleet_number];}
+    inline       void       setEnseiStartDate(int fleet_number,
+                                              const QDateTime &ensei_start_date)             {_ensei_start_date[fleet_number] = ensei_start_date;}
+    inline       bool       enseiCounting(int fleet_number)                             const{return _ensei_counting[fleet_number];}
+    inline       void       setEnseiCounting(int fleet_number, bool ensei_counting)          {_ensei_counting[fleet_number] = ensei_counting;}
 
 private:
     void loadEnseiInfo(int fleet_number);

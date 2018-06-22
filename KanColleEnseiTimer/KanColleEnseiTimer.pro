@@ -34,3 +34,8 @@ CONFIG(debug, release|debug):DEFINES += _DEBUG
 DISTFILES += \
     algorithm.txt \
     readme.md
+
+RESOURCES += \
+    resource.qrc
+
+RC_ICONS = icon.ico
