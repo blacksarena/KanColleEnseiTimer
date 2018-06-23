@@ -33,6 +33,7 @@ public:
 
 private:
     void updateLeftTime(CountDownTimer *timer, QLabel *left_time);
+    void showEnseiInfo(const QString &ensei_name);
 
 private slots:
     void on_ensei_list2_currentTextChanged(const QString &arg1);
@@ -53,6 +54,9 @@ private slots:
     void on_departure2_pressed();
     void on_departure3_pressed();
     void on_departure4_pressed();
+    void on_info2_clicked();
+    void on_info3_clicked();
+    void on_info4_clicked();
 
 private:
     Ui::MainWindow *ui;

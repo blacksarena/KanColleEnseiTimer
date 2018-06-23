@@ -37,5 +37,3 @@ DISTFILES += \
 
 RESOURCES += \
     resource.qrc
-
-RC_ICONS = icon.ico

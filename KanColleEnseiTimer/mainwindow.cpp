@@ -308,3 +308,41 @@ void MainWindow::on_departure4_pressed()
     continue_fleet_id = this->startTimer(500);
     continue_fleet = eContinueFleetId::fourth;
 }
+
+void MainWindow::on_info2_clicked()
+{
+    showEnseiInfo(ui->ensei_list2->currentText());
+}
+
+void MainWindow::on_info3_clicked()
+{
+    showEnseiInfo(ui->ensei_list3->currentText());
+}
+
+void MainWindow::on_info4_clicked()
+{
+    showEnseiInfo(ui->ensei_list4->currentText());
+}
+
+void MainWindow::showEnseiInfo(const QString &ensei_name)
+{
+    QMessageBox msg_box(this);
+    QStringList info = _ensei_data->getEnseiInfo(ensei_name);
+    QString new_line;
+#ifdef __linux__
+    new_line = "\n";
+#elif _WIN32
+    new_line = "\r\n";
+#elif __APPLE__
+    new_line = "\n";
+#endif
+    QString msg_text = info[eInfo::required_organization] + new_line +
+                       info[eInfo::required_shiptype] + new_line +
+                       info[eInfo::other_info] + new_line +
+                       info[eInfo::composition_example];
+    msg_box.setText(msg_text);
+    msg_box.setWindowTitle("information");
+    msg_box.setStandardButtons(QMessageBox::Ok);
+    msg_box.setDefaultButton(QMessageBox::Ok);
+    msg_box.exec();
+}

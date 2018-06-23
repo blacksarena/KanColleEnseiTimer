@@ -62,3 +62,12 @@ int EnseiData::getBauxite(const QString &ensei_name)
 {
     return _ensei_lib[ensei_name]["獲得資源"].toObject()["ボーキサイト"].toInt();
 }
+
+const QStringList EnseiData::getEnseiInfo(const QString& ensei_name)
+{
+    QStringList info = {_ensei_lib[ensei_name]["編成条件"].toObject()["必要編成隻数"].toString(),
+                        _ensei_lib[ensei_name]["編成条件"].toObject()["必要艦種"].toString(),
+                        _ensei_lib[ensei_name]["編成条件"].toObject()["その他必要条件"].toString(),
+                        _ensei_lib[ensei_name]["編成条件"].toObject()["編成例"].toString()};
+    return info;
+}
