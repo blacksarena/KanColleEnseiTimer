@@ -6,7 +6,7 @@ change icon(for Unity desktop)
 `$cd ~/.local/share/applications/`  
 `$nano kancolleenseitimer.desktop (create or edit)`
 
->kancolleenseitimer.desktop  
+kancolleenseitimer.desktop
 >[Desktop Entry]  
 >Encoding=UTF-8  
 >Version=1.0  

@@ -19,7 +19,7 @@
   <property name="minimumSize">
    <size>
     <width>800</width>
-    <height>96</height>
+    <height>95</height>
    </size>
   </property>
   <property name="maximumSize">
@@ -95,7 +95,7 @@
    <widget class="QLabel" name="return_time_label2">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>10</x>
       <y>50</y>
       <width>81</width>
       <height>31</height>
@@ -116,7 +116,7 @@
    <widget class="QLabel" name="return_time2">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>0</x>
       <y>70</y>
       <width>101</width>
       <height>31</height>
@@ -137,7 +137,7 @@
    <widget class="QLabel" name="fuel2">
     <property name="geometry">
      <rect>
-      <x>120</x>
+      <x>114</x>
       <y>55</y>
       <width>31</width>
       <height>21</height>
@@ -158,7 +158,7 @@
    <widget class="QLabel" name="ammunition2">
     <property name="geometry">
      <rect>
-      <x>120</x>
+      <x>114</x>
       <y>75</y>
       <width>31</width>
       <height>21</height>
@@ -341,7 +341,7 @@
    <widget class="QLabel" name="return_time_label3">
     <property name="geometry">
      <rect>
-      <x>210</x>
+      <x>200</x>
       <y>50</y>
       <width>81</width>
       <height>31</height>
@@ -362,7 +362,7 @@
    <widget class="QLabel" name="return_time3">
     <property name="geometry">
      <rect>
-      <x>200</x>
+      <x>190</x>
       <y>70</y>
       <width>101</width>
       <height>31</height>
@@ -383,7 +383,7 @@
    <widget class="QLabel" name="fuel3">
     <property name="geometry">
      <rect>
-      <x>310</x>
+      <x>304</x>
       <y>55</y>
       <width>31</width>
       <height>21</height>
@@ -425,7 +425,7 @@
    <widget class="QLabel" name="ammunition3">
     <property name="geometry">
      <rect>
-      <x>310</x>
+      <x>304</x>
       <y>75</y>
       <width>31</width>
       <height>21</height>
@@ -509,7 +509,7 @@
    <widget class="QLabel" name="ammunition4">
     <property name="geometry">
      <rect>
-      <x>500</x>
+      <x>494</x>
       <y>75</y>
       <width>31</width>
       <height>21</height>
@@ -530,7 +530,7 @@
    <widget class="QLabel" name="fuel4">
     <property name="geometry">
      <rect>
-      <x>500</x>
+      <x>494</x>
       <y>55</y>
       <width>31</width>
       <height>21</height>
@@ -551,7 +551,7 @@
    <widget class="QLabel" name="return_time_label4">
     <property name="geometry">
      <rect>
-      <x>400</x>
+      <x>390</x>
       <y>50</y>
       <width>81</width>
       <height>31</height>
@@ -572,7 +572,7 @@
    <widget class="QLabel" name="return_time4">
     <property name="geometry">
      <rect>
-      <x>390</x>
+      <x>380</x>
       <y>70</y>
       <width>101</width>
       <height>31</height>
@@ -627,6 +627,198 @@
     </property>
     <property name="text">
      <string>takeSS</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fuel_image2">
+    <property name="geometry">
+     <rect>
+      <x>98</x>
+      <y>57</y>
+      <width>18</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resource.qrc">:/icons/fuel.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ammunition_image2_2">
+    <property name="geometry">
+     <rect>
+      <x>98</x>
+      <y>75</y>
+      <width>18</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resource.qrc">:/icons/ammunition.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ammunition_image2_3">
+    <property name="geometry">
+     <rect>
+      <x>145</x>
+      <y>75</y>
+      <width>18</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resource.qrc">:/icons/bauxite.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="steel_image2_2">
+    <property name="geometry">
+     <rect>
+      <x>145</x>
+      <y>57</y>
+      <width>18</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resource.qrc">:/icons/steel.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fuel_image2_2">
+    <property name="geometry">
+     <rect>
+      <x>288</x>
+      <y>57</y>
+      <width>18</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resource.qrc">:/icons/fuel.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ammunition_image2_4">
+    <property name="geometry">
+     <rect>
+      <x>288</x>
+      <y>75</y>
+      <width>18</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resource.qrc">:/icons/ammunition.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="steel_image2_3">
+    <property name="geometry">
+     <rect>
+      <x>335</x>
+      <y>57</y>
+      <width>18</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resource.qrc">:/icons/steel.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ammunition_image2_5">
+    <property name="geometry">
+     <rect>
+      <x>335</x>
+      <y>75</y>
+      <width>18</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resource.qrc">:/icons/bauxite.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fuel_image2_3">
+    <property name="geometry">
+     <rect>
+      <x>478</x>
+      <y>57</y>
+      <width>18</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resource.qrc">:/icons/fuel.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ammunition_image2_6">
+    <property name="geometry">
+     <rect>
+      <x>525</x>
+      <y>75</y>
+      <width>18</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resource.qrc">:/icons/bauxite.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ammunition_image2_7">
+    <property name="geometry">
+     <rect>
+      <x>478</x>
+      <y>75</y>
+      <width>18</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resource.qrc">:/icons/ammunition.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="steel_image2_4">
+    <property name="geometry">
+     <rect>
+      <x>525</x>
+      <y>57</y>
+      <width>18</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resource.qrc">:/icons/steel.png</pixmap>
     </property>
    </widget>
   </widget>
@@ -711,6 +903,8 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -1,7 +1,7 @@
 #include "screen_shot.h"
 
 ScreenShot::ScreenShot()
-:_gameWindow(0, 0, 800, 480)
+:_gameWindow(0, 0, 1200, 720)
 ,_image_format(ImageFormat::png)
 ,_save_directory("")
 ,_take_screen_shot_error_string("")
@@ -178,6 +178,7 @@ bool ScreenShot::serchGameWindow()
     //xyFixed->setPixmap(screenPixmap.copy(_gameWindow.x(), _gameWindow.y(), _gameWindow.width(), _gameWindow.height()));
     xyFixed->setPixmap(QGuiApplication::primaryScreen()->grabWindow(0).copy(_gameWindow.x(), _gameWindow.y(), _gameWindow.width(), _gameWindow.height()));
 #ifdef _DEBUG
+    xyFixed->resize(_gameWindow.width(), _gameWindow.height());
     xyFixed->show();
 #endif// _DEBUG
 
