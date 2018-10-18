@@ -37,3 +37,5 @@ DISTFILES += \
 
 RESOURCES += \
     resource.qrc
+
+LIBS += -lpcap
