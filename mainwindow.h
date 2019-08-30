@@ -9,6 +9,7 @@
 #include "ensei_settings.h"
 #include "screen_shot.h"
 #include "countdown_from_the_middle.h"
+#include "manuallockscreen.h"
 
 enum eContinueFleetId{
     unknown = 0,
@@ -57,6 +58,7 @@ private slots:
     void on_info2_clicked();
     void on_info3_clicked();
     void on_info4_clicked();
+    void on_adjust_screen_triggered();
 
 private:
     Ui::MainWindow *ui;

@@ -346,3 +346,15 @@ void MainWindow::showEnseiInfo(const QString &ensei_name)
     msg_box.setDefaultButton(QMessageBox::Ok);
     msg_box.exec();
 }
+
+void MainWindow::on_adjust_screen_triggered()
+{
+    // dialog表示
+    ManualLockScreen *mls = new ManualLockScreen(_settings->gameWindowRect(), this);
+    mls->show();
+    if(mls->exec() == QDialog::Accepted)
+    {
+        _settings->setGameWindowRect(mls->gameWindowRect());
+    }
+    delete mls;
+}

@@ -828,7 +828,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>25</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">
@@ -852,6 +852,7 @@
     </widget>
     <addaction name="menu_3"/>
     <addaction name="save_path"/>
+    <addaction name="adjust_screen"/>
    </widget>
    <addaction name="menu"/>
    <addaction name="menu_2"/>
@@ -899,6 +900,11 @@
    </property>
    <property name="text">
     <string>BMP</string>
+   </property>
+  </action>
+  <action name="adjust_screen">
+   <property name="text">
+    <string>ゲーム画面の調整</string>
    </property>
   </action>
  </widget>

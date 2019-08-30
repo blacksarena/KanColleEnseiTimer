@@ -26,6 +26,13 @@ void EnseiSettings::loadSettings()
     _window_frontmost = this->value("window_frontmost", false).toBool();
     this->endGroup();
 
+    this->beginGroup("screen_shot");
+    _gameWindowRect = QRect(this->value("game_window_x", 0).toInt(),
+                            this->value("game_window_y", 0).toInt(),
+                            this->value("game_window_width", 1200).toInt(),
+                            this->value("game_window_height", 720).toInt());
+    this->endGroup();
+
     loadEnseiInfo(_fleet_2nd);
     loadEnseiInfo(_fleet_3rd);
     loadEnseiInfo(_fleet_4th);
@@ -70,5 +77,12 @@ void EnseiSettings::saveEnseiInfo(int fleet_number)
     this->setValue("minute",      _ensei_start_date[fleet_number].toString("mm"));
     this->setValue("second",      _ensei_start_date[fleet_number].toString("ss"));
     this->setValue("counting",    _ensei_counting[fleet_number]);
+    this->endGroup();
+
+    this->beginGroup("screen_shot");
+    this->setValue("game_window_x", _gameWindowRect.x());
+    this->setValue("game_window_y", _gameWindowRect.y());
+    this->setValue("game_window_width", _gameWindowRect.width());
+    this->setValue("game_window_height", _gameWindowRect.height());
     this->endGroup();
 }
