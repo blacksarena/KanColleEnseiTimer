@@ -47,11 +47,11 @@ private slots:
     void on_departure2_released();
     void on_departure3_released();
     void on_departure4_released();
-    void on_pushButton_clicked();
+    void on_serchWindow_clicked();
     void on_format_png_toggled(bool status);
     void on_format_jpg_toggled(bool status);
     void on_format_bmp_toggled(bool status);
-    void on_pushButton_2_clicked();
+    void on_takeSS_clicked();
     void on_departure2_pressed();
     void on_departure3_pressed();
     void on_departure4_pressed();
@@ -59,6 +59,7 @@ private slots:
     void on_info3_clicked();
     void on_info4_clicked();
     void on_adjust_screen_triggered();
+    void on_checkSS_clicked();
 
 private:
     Ui::MainWindow *ui;

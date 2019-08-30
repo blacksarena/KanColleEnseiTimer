@@ -1,10 +1,12 @@
 #include "screen_shot.h"
 
 ScreenShot::ScreenShot()
-:_gameWindow(0, 0, 1200, 720)
+:_game_window_origin(0, 0, 1200, 720)
+,_gameWindow(0, 0, 1200, 720)
 ,_image_format(ImageFormat::png)
 ,_save_directory("")
 ,_take_screen_shot_error_string("")
+,_screen_shot(QPixmap(_gameWindow.width(), _gameWindow.height()))
 {
 }
 
@@ -176,7 +178,8 @@ bool ScreenShot::serchGameWindow()
     _gameWindow.setX(brouser_pos.x()+x);
     _gameWindow.setY(brouser_pos.y()+y);
     //xyFixed->setPixmap(screenPixmap.copy(_gameWindow.x(), _gameWindow.y(), _gameWindow.width(), _gameWindow.height()));
-    xyFixed->setPixmap(QGuiApplication::primaryScreen()->grabWindow(0).copy(_gameWindow.x(), _gameWindow.y(), _gameWindow.width(), _gameWindow.height()));
+    this->_screen_shot = QGuiApplication::primaryScreen()->grabWindow(0).copy(_gameWindow.x(), _gameWindow.y(), _gameWindow.width(), _gameWindow.height());
+    xyFixed->setPixmap(_screen_shot);
 #ifdef _DEBUG
     xyFixed->resize(_gameWindow.width(), _gameWindow.height());
     xyFixed->show();
@@ -212,4 +215,18 @@ bool ScreenShot::takeScreenShot()
         return false;
     }
     return true;
+}
+
+void ScreenShot::setZoom(double zoom)
+{
+    _gameWindow.setWidth(_game_window_origin.width()*zoom);
+    _gameWindow.setHeight(_game_window_origin.height()*zoom);
+    qDebug() << "zoom width: " << _gameWindow.width();
+    qDebug() << "zoom height: " << _gameWindow.height();
+}
+
+const QPixmap& ScreenShot::pixmap()
+{
+    this->_screen_shot = QGuiApplication::primaryScreen()->grabWindow(0).copy(_gameWindow.x(), _gameWindow.y(), _gameWindow.width(), _gameWindow.height());
+    return _screen_shot;
 }

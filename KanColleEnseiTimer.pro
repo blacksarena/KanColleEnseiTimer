@@ -18,7 +18,8 @@ SOURCES += main.cpp\
     ensei_settings.cpp \
     screen_shot.cpp \
     countdown_from_the_middle.cpp \
-    manuallockscreen.cpp
+    manuallockscreen.cpp \
+    qtimespinbox.cpp
 
 HEADERS  += mainwindow.h \
     ensei_data.h \
@@ -26,7 +27,8 @@ HEADERS  += mainwindow.h \
     ensei_settings.h \
     screen_shot.h \
     countdown_from_the_middle.h \
-    manuallockscreen.h
+    manuallockscreen.h \
+    qtimespinbox.h
 
 FORMS    += mainwindow.ui \
     countdown_from_the_middle.ui \

@@ -47,17 +47,28 @@ public:
     // setter
     inline void setFormat(ImageFormat image_format){_image_format = image_format;}
     inline void setSaveDirectory(QString save_directory){_save_directory = save_directory;}
+    inline void setGameWindow(const QRect &gameWindow)
+    {
+        _gameWindow.setX(gameWindow.x());
+        _gameWindow.setY(gameWindow.y());
+        _gameWindow.setWidth(gameWindow.width());
+        _gameWindow.setHeight(gameWindow.height());
+    }
     // getter
     inline const QString& getTakeScreenShotErrorString()const{return _take_screen_shot_error_string;}
 
     bool serchGameWindow();
     bool takeScreenShot();
+    void setZoom(double zoom);
+    const QPixmap& pixmap();
 
 private:
+    const Rect _game_window_origin;
     Rect _gameWindow;
     ImageFormat _image_format;
     QString _save_directory;
     QString _take_screen_shot_error_string;
+    QPixmap _screen_shot;
 };
 
 #endif // SCREENSHOT_H
