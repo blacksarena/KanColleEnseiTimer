@@ -25,6 +25,7 @@ ManualLockScreen::~ManualLockScreen()
 {
     if(_timer != nullptr)
     {
+        _timer->stop();
         delete _timer;
     }
     delete ui;
@@ -42,6 +43,7 @@ void ManualLockScreen::on_timer_timeout()
                                           _gameWindowRect.width(),
                                           _gameWindowRect.height());
     }
+    _gameWindowImage.resize(screenPixmap.rect().width(), screenPixmap.rect().height());
     _gameWindowImage.setPixmap(screenPixmap);
     _gameWindowImage.show();
 }
