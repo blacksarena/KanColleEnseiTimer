@@ -26,30 +26,53 @@ MainWindow::MainWindow(QWidget *parent)
     ui->ensei_list2->addItems(_ensei_data->getEnseiList());
     ui->ensei_list3->addItems(_ensei_data->getEnseiList());
     ui->ensei_list4->addItems(_ensei_data->getEnseiList());
-    ui->ensei_list2->setCurrentText(_settings->destination(0));
-    ui->ensei_list3->setCurrentText(_settings->destination(1));
-    ui->ensei_list4->setCurrentText(_settings->destination(2));
     QObject::connect(ui->ensei_list2, SIGNAL(currentTextChanged(const QString&)), this, SLOT(on_ensei_list2_currentTextChanged(const QString&)));
     QObject::connect(ui->ensei_list3, SIGNAL(currentTextChanged(const QString&)), this, SLOT(on_ensei_list3_currentTextChanged(const QString&)));
     QObject::connect(ui->ensei_list4, SIGNAL(currentTextChanged(const QString&)), this, SLOT(on_ensei_list4_currentTextChanged(const QString&)));
-    _count_down[0]->setTimer(_ensei_data->getHour(ui->ensei_list2->currentText()), _ensei_data->getMin(ui->ensei_list2->currentText()));
-    _count_down[1]->setTimer(_ensei_data->getHour(ui->ensei_list3->currentText()), _ensei_data->getMin(ui->ensei_list3->currentText()));
-    _count_down[2]->setTimer(_ensei_data->getHour(ui->ensei_list4->currentText()), _ensei_data->getMin(ui->ensei_list4->currentText()));
+
     if(_settings->enseiCounting(0) == true){
+        ui->ensei_list2->setCurrentText(_settings->destination(0));
+        _count_down[0]->setTimer(_ensei_data->getHour(ui->ensei_list2->currentText()), _ensei_data->getMin(ui->ensei_list2->currentText()));
         ui->return_time2->setText(_count_down[0]->start(_settings->enseiStartDate(0)));
+        _settings->setEnseiStartDate(0, _count_down[0]->startTime());
+        _settings->setEnseiCounting(0, _count_down[0]->isCountDown());
+        _settings->saveSettings();
+    }else{
+        ui->ensei_list2->setCurrentText(_settings->destination(0));
+        _count_down[0]->setTimer(_ensei_data->getHour(ui->ensei_list2->currentText()), _ensei_data->getMin(ui->ensei_list2->currentText()));
     }
+
     if(_settings->enseiCounting(1) == true){
+        ui->ensei_list3->setCurrentText(_settings->destination(1));
+        _count_down[1]->setTimer(_ensei_data->getHour(ui->ensei_list3->currentText()), _ensei_data->getMin(ui->ensei_list3->currentText()));
         ui->return_time3->setText(_count_down[1]->start(_settings->enseiStartDate(1)));
+        _settings->setEnseiStartDate(1, _count_down[1]->startTime());
+        _settings->setEnseiCounting(1, _count_down[1]->isCountDown());
+        _settings->saveSettings();
+    }else{
+        ui->ensei_list3->setCurrentText(_settings->destination(1));
+        _count_down[1]->setTimer(_ensei_data->getHour(ui->ensei_list3->currentText()), _ensei_data->getMin(ui->ensei_list3->currentText()));
     }
+
     if(_settings->enseiCounting(2) == true){
+        ui->ensei_list4->setCurrentText(_settings->destination(2));
+        _count_down[2]->setTimer(_ensei_data->getHour(ui->ensei_list4->currentText()), _ensei_data->getMin(ui->ensei_list4->currentText()));
         ui->return_time4->setText(_count_down[2]->start(_settings->enseiStartDate(2)));
+        _settings->setEnseiStartDate(2, _count_down[2]->startTime());
+        _settings->setEnseiCounting(2, _count_down[2]->isCountDown());
+        _settings->saveSettings();
+    }else{
+        ui->ensei_list4->setCurrentText(_settings->destination(2));
+        _count_down[2]->setTimer(_ensei_data->getHour(ui->ensei_list4->currentText()), _ensei_data->getMin(ui->ensei_list4->currentText()));
     }
+
     countdown_update_id = startTimer(1000);
     QTimerEvent *e = new QTimerEvent(countdown_update_id);
     timerEvent(new QTimerEvent(countdown_update_id));// 画面更新のため
     delete e;
 
     _screen_shot = new ScreenShot;
+    _screen_shot->setZoom(1.0);
 }
 
 MainWindow::~MainWindow()
@@ -181,7 +204,6 @@ void MainWindow::on_departure2_clicked()
     _settings->setEnseiStartDate(0, _count_down[0]->startTime());
     _settings->setEnseiCounting(0, _count_down[0]->isCountDown());
     _settings->saveSettings();
-    // timer kill
 }
 
 void MainWindow::on_departure3_clicked()
@@ -252,7 +274,7 @@ void MainWindow::on_departure4_released()
 
 }
 
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_serchWindow_clicked()
 {
     _screen_shot->serchGameWindow();
 }
@@ -284,15 +306,13 @@ void MainWindow::on_format_bmp_toggled(bool status)
     }
 }
 
-void MainWindow::on_pushButton_2_clicked()
+void MainWindow::on_takeSS_clicked()
 {
     _screen_shot->takeScreenShot();
 }
 
 void MainWindow::on_departure2_pressed()
 {
-    qDebug() << "pressed";
-    // timer start
     continue_fleet_id = this->startTimer(500);
     continue_fleet = eContinueFleetId::second;
 }
@@ -345,4 +365,15 @@ void MainWindow::showEnseiInfo(const QString &ensei_name)
     msg_box.setStandardButtons(QMessageBox::Ok);
     msg_box.setDefaultButton(QMessageBox::Ok);
     msg_box.exec();
+}
+
+void MainWindow::on_checkSS_clicked()
+{
+    if(_screen_shot->serchGameWindow() == false){
+        qDebug() << "failed take screen shot.";
+    }
+
+    QPixmap ss = this->_screen_shot->pixmap();
+    ss = ss.scaled(ui->screenShot->size());
+    ui->screenShot->setPixmap(ss);
 }

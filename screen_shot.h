@@ -52,12 +52,16 @@ public:
 
     bool serchGameWindow();
     bool takeScreenShot();
+    void setZoom(double zoom);
+    const QPixmap& pixmap();
 
 private:
+    const Rect _game_window_origin;
     Rect _gameWindow;
     ImageFormat _image_format;
     QString _save_directory;
     QString _take_screen_shot_error_string;
+    QPixmap _screen_shot;
 };
 
 #endif // SCREENSHOT_H

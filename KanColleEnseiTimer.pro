@@ -17,14 +17,16 @@ SOURCES += main.cpp\
     count_down_timer.cpp \
     ensei_settings.cpp \
     screen_shot.cpp \
-    countdown_from_the_middle.cpp
+    countdown_from_the_middle.cpp \
+    qtimespinbox.cpp
 
 HEADERS  += mainwindow.h \
     ensei_data.h \
     count_down_timer.h \
     ensei_settings.h \
     screen_shot.h \
-    countdown_from_the_middle.h
+    countdown_from_the_middle.h \
+    qtimespinbox.h
 
 FORMS    += mainwindow.ui \
     countdown_from_the_middle.ui

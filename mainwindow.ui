@@ -590,11 +590,11 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="serchWindow">
     <property name="geometry">
      <rect>
-      <x>570</x>
-      <y>10</y>
+      <x>700</x>
+      <y>0</y>
       <width>99</width>
       <height>27</height>
      </rect>
@@ -603,24 +603,11 @@
      <string>serchWindow</string>
     </property>
    </widget>
-   <widget class="QLabel" name="image_label">
+   <widget class="QPushButton" name="takeSS">
     <property name="geometry">
      <rect>
       <x>700</x>
-      <y>30</y>
-      <width>67</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>TextLabel</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_2">
-    <property name="geometry">
-     <rect>
-      <x>570</x>
-      <y>40</y>
+      <y>54</y>
       <width>99</width>
       <height>27</height>
      </rect>
@@ -821,6 +808,32 @@
      <pixmap resource="resource.qrc">:/icons/steel.png</pixmap>
     </property>
    </widget>
+   <widget class="QPushButton" name="checkSS">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>27</y>
+      <width>99</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>checkSS</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="screenShot">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>0</y>
+      <width>120</width>
+      <height>72</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -828,7 +841,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>25</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">
