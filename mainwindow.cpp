@@ -5,6 +5,7 @@ MainWindow::MainWindow(QWidget *parent)
 :QMainWindow(parent)
 ,ui(new Ui::MainWindow)
 ,continue_fleet(eContinueFleetId::unknown)
+,_is_countdown_dock{false, false, false, false}
 {
     ui->setupUi(this);
 
@@ -143,6 +144,14 @@ void MainWindow::timerEvent(QTimerEvent *e)
         delete p;
         continue_fleet = eContinueFleetId::unknown;
         killTimer(continue_fleet_id);
+    }
+
+    QTimeEdit *dockList[] = {this->ui->dock1Timer,
+                             this->ui->dock2Timer,
+                             this->ui->dock3Timer,
+                             this->ui->dock4Timer};
+    for(int dock_index = 0; dock_index < 4; ++dock_index){
+        countDownDock(dock_index, dockList[dock_index]);
     }
 }
 
@@ -390,4 +399,40 @@ void MainWindow::on_checkSS_clicked()
     QPixmap ss = this->_screen_shot->pixmap();
     ss = ss.scaled(ui->screenShot->size());
     ui->screenShot->setPixmap(ss);
+}
+
+void MainWindow::on_enterDock1_clicked()
+{
+    _is_countdown_dock[0] = true;
+}
+
+void MainWindow::on_enterDock2_clicked()
+{
+    _is_countdown_dock[1] = true;
+}
+
+void MainWindow::on_enterDock3_clicked()
+{
+    _is_countdown_dock[2] = true;
+}
+
+void MainWindow::on_enterDock4_clicked()
+{
+    _is_countdown_dock[3] = true;
+}
+
+void MainWindow::countDownDock(int dock_index, QTimeEdit *widget)
+{
+    if(_is_countdown_dock[dock_index] == true){
+        widget->setTime(widget->time().addSecs(-1));
+        int left_secs = widget->time().hour()   * 3600
+                      + widget->time().minute() * 60
+                      + widget->time().second();
+        if(left_secs < 60){
+            // 背景を赤くする
+        }
+        if(left_secs < 1){
+            _is_countdown_dock[dock_index] = false;
+        }
+    }
 }

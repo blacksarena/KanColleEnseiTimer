@@ -35,6 +35,7 @@ public:
 private:
     void updateLeftTime(CountDownTimer *timer, QLabel *left_time);
     void showEnseiInfo(const QString &ensei_name);
+    void countDownDock(int dock_index, QTimeEdit *widget);
 
 private slots:
     void on_ensei_list2_currentTextChanged(const QString &arg1);
@@ -60,11 +61,16 @@ private slots:
     void on_info4_clicked();
     void on_adjust_screen_triggered();
     void on_checkSS_clicked();
+    void on_enterDock1_clicked();
+    void on_enterDock2_clicked();
+    void on_enterDock3_clicked();
+    void on_enterDock4_clicked();
 
 private:
     Ui::MainWindow *ui;
     EnseiData *_ensei_data;
     CountDownTimer *_count_down[3];
+    bool _is_countdown_dock[4];
     EnseiSettings *_settings;
     ScreenShot *_screen_shot;
     int countdown_update_id;
