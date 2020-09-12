@@ -160,6 +160,9 @@
         </item>
         <item>
          <layout class="QGridLayout" name="gridLayout">
+          <property name="spacing">
+           <number>0</number>
+          </property>
           <item row="0" column="0">
            <widget class="QLabel" name="fuel_image2">
             <property name="text">
@@ -378,6 +381,9 @@
         </item>
         <item>
          <layout class="QGridLayout" name="gridLayout_2">
+          <property name="spacing">
+           <number>0</number>
+          </property>
           <item row="0" column="0">
            <widget class="QLabel" name="fuel_image2_2">
             <property name="text">
@@ -596,6 +602,9 @@
         </item>
         <item>
          <layout class="QGridLayout" name="gridLayout_3">
+          <property name="spacing">
+           <number>0</number>
+          </property>
           <item row="0" column="3">
            <widget class="QLabel" name="steel4">
             <property name="font">
